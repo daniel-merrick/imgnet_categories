@@ -12,26 +12,23 @@ import subprocess
 # "https://github.com/hardikvasa/google-images-download"#
 #########################################################								
 
-#Classification categories text file
-
-
-#Detection categories text file
-
 
 # CONFIG PARAMETERS:
 #	SITE_NAME -> where should we pull our google images from
-#	OUTPUT_DIRECTORY -> where we should save our images
 #	CLASSIFICATION_FILE -> text file that holds classification categories	
 #	CLASSIFICATION_LIMIT -> number of images to pull for each classification category
+#	CLASSIFICATION_OUTPUT_DIRECTORY -> directory to save classification images
 #	DETECTION_FILE -> text file that holds detection categories
 #	DETECTION_LIMIT -> number of images to pull for each detection category
+#	DETECTION_OUTPUT_DIRECTORY -> directory to save detection images
 
 SITE_NAME = "https://www.flickr.com"
-OUTPUT_DIRECTORY = "flickr_images"
 CLASSIFICATION_FILE = "imgnet_classify_categories.txt" 
 CLASSIFICATION_LIMIT = "1"
+CLASSIFICAITON_OUTPUT_DIRECTORY = "classification_flickr_images"
 DETECTION_FILE = "imgnet_detection_categories.txt"
 DETECTION_LIMIT = "1"
+DETECTION_OUTPUT_DIRECTORY = "detection_flickr_images"
 
 
 #read in each line of file that holds classification categories
@@ -62,10 +59,10 @@ with open(DETECTION_FILE, "r") as fin:
 
 #downloading classification categories
 for category in classification_categories:
-	subprocess.call(["googleimagesdownload", "--keywords", category[0], "--specific_site", SITE_NAME, "--limit", CLASSIFICATION_LIMIT, "-o", "flickr_images"])
+	subprocess.call(["googleimagesdownload", "--keywords", category[0], "--specific_site", SITE_NAME, "--limit", CLASSIFICATION_LIMIT, "-o", "CLASSIFICAITON_OUTPUT_DIRECTORY"])
 	
 #downloading detection categories
-#for category in detection_categories:
-#	subprocess.call(["googleimagesdownload", "--keywords", category[0], "--specific_site", SITE_NAME, "--limit", DETECTION_LIMIT])
+for category in detection_categories:
+	subprocess.call(["googleimagesdownload", "--keywords", category[0], "--specific_site", SITE_NAME, "--limit", DETECTION_LIMIT, "-o", DETECTION_OUTPUT_DIRECTORY])
 
 
