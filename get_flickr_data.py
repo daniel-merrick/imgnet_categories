@@ -25,7 +25,7 @@ import subprocess
 SITE_NAME = "https://www.flickr.com"
 CLASSIFICATION_FILE = "imgnet_classify_categories.txt" 
 CLASSIFICATION_LIMIT = "1"
-CLASSIFICAITON_OUTPUT_DIRECTORY = "classification_flickr_images"
+CLASSIFICATION_OUTPUT_DIRECTORY = "classification_flickr_images"
 DETECTION_FILE = "imgnet_detection_categories.txt"
 DETECTION_LIMIT = "1"
 DETECTION_OUTPUT_DIRECTORY = "detection_flickr_images"
