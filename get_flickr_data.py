@@ -59,7 +59,7 @@ with open(DETECTION_FILE, "r") as fin:
 
 #downloading classification categories
 for category in classification_categories:
-	subprocess.call(["googleimagesdownload", "--keywords", category[0], "--specific_site", SITE_NAME, "--limit", CLASSIFICATION_LIMIT, "-o", "CLASSIFICATION_OUTPUT_DIRECTORY"])
+	subprocess.call(["googleimagesdownload", "--keywords", category[0], "--specific_site", SITE_NAME, "--limit", CLASSIFICATION_LIMIT, "-o", CLASSIFICATION_OUTPUT_DIRECTORY])
 	
 #downloading detection categories
 for category in detection_categories:
