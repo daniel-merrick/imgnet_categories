@@ -53,8 +53,8 @@ with open(DETECTION_FILE, "r") as fin:
 #	]
 
 #following commands to download: 
-#	10 images for each classification category
-#	20 images for each detection category
+#	CLASSIFICATION_LIMIT images for each classification category
+#	DETECTION_LIMIT images for each detection category
 # NOTE_:
 #	Not sure how to handle when one category has multiple
 #	descriptions for the same thing... For now I am going
